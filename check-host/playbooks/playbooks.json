@@ -1,0 +1,427 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "95d63c78-4d11-40cd-9b12-a6ab34173371",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Check Host - 1.0.0",
+      "description": "Check host offers various network-related tools and services. It also provides tools for checking the availability and response time of a website or server from different locations around the world.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "check-host"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "b83efe01-e42f-40fe-8be8-f547a87686a0",
+          "collection": "/api/3/workflow_collections/95d63c78-4d11-40cd-9b12-a6ab34173371",
+          "triggerLimit": null,
+          "description": "Ping Check allows to test the reachability of a host, to measure network latency and packets loss from different servers in the world.",
+          "name": "Ping Check",
+          "tag": "#Check Host",
+          "recordTags": [
+            "check-host"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0d798eb2-ca19-42d2-9e0e-390cf07740ec",
+          "steps": [
+            {
+              "uuid": "0d798eb2-ca19-42d2-9e0e-390cf07740ec",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d4846057-fbf1-4f3f-a3a5-794891a7937c",
+                "title": "Check Host: Ping Check",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c3173776-d09d-41b2-9689-4c8f91c43f70",
+              "@type": "WorkflowStep",
+              "name": "Ping Check",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Check Host",
+                "config": "''",
+                "params": {
+                  "host": "",
+                  "max_nodes": ""
+                },
+                "version": "1.0.0",
+                "connector": "check-host",
+                "operation": "ping_check",
+                "operationTitle": "Ping Check",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "45a8a525-e15b-4752-9bb7-da05ef9da403",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Ping Check",
+              "sourceStep": "/api/3/workflow_steps/0d798eb2-ca19-42d2-9e0e-390cf07740ec",
+              "targetStep": "/api/3/workflow_steps/c3173776-d09d-41b2-9689-4c8f91c43f70"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b3db5af5-61e5-4ff4-bd94-4038926d405a",
+          "collection": "/api/3/workflow_collections/95d63c78-4d11-40cd-9b12-a6ab34173371",
+          "triggerLimit": null,
+          "description": "HTTP is for checking website's response performance and availability from many countries and datacenters.",
+          "name": "HTTP Check",
+          "tag": "#Check Host",
+          "recordTags": [
+            "check-host"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c4ef9ae0-f0fa-4530-bab1-1969307e4bce",
+          "steps": [
+            {
+              "uuid": "c4ef9ae0-f0fa-4530-bab1-1969307e4bce",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "74a84446-aea0-40fa-ad71-9ba6120d0db1",
+                "title": "Check Host: HTTP Check",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "37d3cdde-5310-4ff3-a970-1be9b840acdf",
+              "@type": "WorkflowStep",
+              "name": "HTTP Check",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Check Host",
+                "config": "''",
+                "params": {
+                  "host": "",
+                  "max_nodes": ""
+                },
+                "version": "1.0.0",
+                "connector": "check-host",
+                "operation": "http_check",
+                "operationTitle": "HTTP Check",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "33fed8e2-54b8-4c3f-97d3-e1740f102454",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> HTTP Check",
+              "sourceStep": "/api/3/workflow_steps/c4ef9ae0-f0fa-4530-bab1-1969307e4bce",
+              "targetStep": "/api/3/workflow_steps/37d3cdde-5310-4ff3-a970-1be9b840acdf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "49c706db-0e18-47d7-a88c-19c0a15a5fd7",
+          "collection": "/api/3/workflow_collections/95d63c78-4d11-40cd-9b12-a6ab34173371",
+          "triggerLimit": null,
+          "description": "TCP connection checks the possibility of a TCP connection to host's specified port.",
+          "name": "TCP Connection Check",
+          "tag": "#Check Host",
+          "recordTags": [
+            "check-host"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8e314c7d-b77d-456d-81a2-89ef23da590f",
+          "steps": [
+            {
+              "uuid": "8e314c7d-b77d-456d-81a2-89ef23da590f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d8a162d9-4cb3-4638-a571-d64b44f280c1",
+                "title": "Check Host: TCP Connection Check",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "fdb029de-d853-487d-8c31-a6530fc9559e",
+              "@type": "WorkflowStep",
+              "name": "TCP Connection Check",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Check Host",
+                "config": "''",
+                "params": {
+                  "host": "",
+                  "max_nodes": ""
+                },
+                "version": "1.0.0",
+                "connector": "check-host",
+                "operation": "tcp_connection_check",
+                "operationTitle": "TCP Connection Check",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "dffbfc26-750d-4e70-a1d1-4565e27e04ad",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> TCP Connection Check",
+              "sourceStep": "/api/3/workflow_steps/8e314c7d-b77d-456d-81a2-89ef23da590f",
+              "targetStep": "/api/3/workflow_steps/fdb029de-d853-487d-8c31-a6530fc9559e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7762c2d3-dcf5-4789-9ab2-2a9ddcd7d368",
+          "collection": "/api/3/workflow_collections/95d63c78-4d11-40cd-9b12-a6ab34173371",
+          "triggerLimit": null,
+          "description": "DNS is for retrieving A, AAAA and PTR records with TTL (time-to-live) from nameservers around the world for checking updates on DNS servers.",
+          "name": "DNS Address Check",
+          "tag": "#Check Host",
+          "recordTags": [
+            "check-host"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ea3d498f-d9c1-42c7-83a3-aae81003e9bc",
+          "steps": [
+            {
+              "uuid": "ea3d498f-d9c1-42c7-83a3-aae81003e9bc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "84cb11c5-5a24-4cd1-a9f5-29c0a6af5104",
+                "title": "Check Host: DNS Address Check",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "37d5ea88-d504-4ecb-a8f0-6dc38feab442",
+              "@type": "WorkflowStep",
+              "name": "DNS Address Check",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Check Host",
+                "config": "''",
+                "params": {
+                  "host": "",
+                  "max_nodes": ""
+                },
+                "version": "1.0.0",
+                "connector": "check-host",
+                "operation": "dns_address_check",
+                "operationTitle": "DNS Address Check",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3bd05ccd-bbc6-4f7c-8aeb-d44b14f48f36",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> DNS Address Check",
+              "sourceStep": "/api/3/workflow_steps/ea3d498f-d9c1-42c7-83a3-aae81003e9bc",
+              "targetStep": "/api/3/workflow_steps/37d5ea88-d504-4ecb-a8f0-6dc38feab442"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4204fcb6-fe61-4619-bc94-fe147169aae3",
+          "collection": "/api/3/workflow_collections/95d63c78-4d11-40cd-9b12-a6ab34173371",
+          "triggerLimit": null,
+          "description": "Retrieve result of a query based on Request ID.",
+          "name": "Check Result By Request ID",
+          "tag": "#Check Host",
+          "recordTags": [
+            "check-host"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3194b000-9320-427c-bcd2-585114d5e949",
+          "steps": [
+            {
+              "uuid": "3194b000-9320-427c-bcd2-585114d5e949",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bd09d699-3646-46f3-8ec0-b880185b07d9",
+                "title": "Check Host: Check Result By Request ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e341aec9-48e6-4a13-af17-46be34454add",
+              "@type": "WorkflowStep",
+              "name": "Check Result By Request ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Check Host",
+                "config": "''",
+                "params": {
+                  "request_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "check-host",
+                "operation": "check_result_by_request_id",
+                "operationTitle": "Check Result By Request ID",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c5e435f9-e013-4265-a0f9-9e16b570fe96",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Check Result By Request ID",
+              "sourceStep": "/api/3/workflow_steps/3194b000-9320-427c-bcd2-585114d5e949",
+              "targetStep": "/api/3/workflow_steps/e341aec9-48e6-4a13-af17-46be34454add"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
