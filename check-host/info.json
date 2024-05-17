@@ -1,233 +1,235 @@
 {
-	"name": "check-host",
-	"version": "1.0.0",
-	"label": "Check Host",
-	"description": "Check host offers various network-related tools and services. It also provides tools for checking the availability and response time of a website or server from different locations around the world.",
-	"publisher": "spryIQ.co",
-	"icon_small_name": "small.png",
-	"icon_large_name": "large.png",
-	"cs_compatible": true,
-	"cs_approved": false,
-	"category": "Networking",
-	"help_online": "https://github.com/fortinet-fortisoar/connector-check-host/blob/release/1.0.0/docs/CheckHostConnectorDoc.md",
-	"configuration": {
-		"fields": [
-			{
-				"title": "Server URL",
-				"type": "text",
-				"name": "server_url",
-				"required": true,
-				"visible": true,
-				"editable": true,
-				"value": "",
-				"tooltip": "Specify the URL of the check host server to connect and perform automated operations.",
-				"description": "Specify the URL of the check host server to connect and perform automated operations.",
-				"placeholder": "e.g: https://check-host.net or check-host.net"
-			}
-		]
-	},
-	"operations": [
-		{
-			"title": "Ping Check",
-			"operation": "ping_check",
-			"description": "Ping Check allows to test the reachability of a host, to measure network latency and packets loss from different servers in the world.",
-			"annotation": "ping_check",
-			"category": "investigation",
-			"parameters": [
-				{
-					"title": "Host",
-					"type": "text",
-					"name": "host",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"placeholder": "eg. https://1.1.1.1 , http://juick.com",
-					"tooltip": "Specify the host.",
-					"description": "Specify the host."
-				},
-				{
-					"title": "Max Nodes",
-					"type": "integer",
-					"name": "max_nodes",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"tooltip": "Enter Maximum Node Count.",
-					"placeholder": "eg.1",
-					"description": "Enter Maximum Node Count."
-				}
-			],
-			"output_schema":{
-					"us1.node.check-host.net": [[]],
-				  	"ch1.node.check-host.net": [[]],
-				  	"pt1.node.check-host.net": null
-			},
-			"open": false
-		},
-		{
-			"title": "HTTP Check",
-			"operation": "http_check",
-			"description": "HTTP is for checking website's response performance and availability from many countries and datacenters.",
-			"annotation": "http_check",
-			"category": "investigation",
-			"parameters": [
-				{
-					"title": "Host",
-					"type": "text",
-					"name": "host",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"placeholder": "eg. https://1.1.1.1 , http://juick.com",
-					"tooltip": "Specify the host.",
-					"description": "Specify the host."
-				},
-				{
-					"title": "Max Nodes",
-					"type": "integer",
-					"name": "max_nodes",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"tooltip": "Enter Maximum Node Count.",
-					"placeholder": "eg.1",
-					"description": "Enter Maximum Node Count."
-				}
-			],
-			"output_schema":{
-				"ok": "",
-				"request_id": "",
-				"permanent_link": "",
-				"nodes": {
-					"us1.node.check-host.net": [],
-					"ch1.node.check-host.net": [],
-					"pt1.node.check-host.net": ""
-				  	}
-				},
-			"open": false
-		},
-		{
-			"title": "TCP Connection Check",
-			"operation": "tcp_connection_check",
-			"description": "TCP connection checks the possibility of a TCP connection to host's specified port.",
-			"annotation": "tcp_check",
-			"category": "investigation",
-			"parameters": [
-				{
-					"title": "Host",
-					"type": "text",
-					"name": "host",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"placeholder": "eg. https://1.1.1.1 , http://juick.com",
-					"tooltip": "Specify the host.",
-					"description": "Specify the host."
-				},
-				{
-					"title": "Max Nodes",
-					"type": "integer",
-					"name": "max_nodes",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"tooltip": "Enter Maximum Node Count.",
-					"placeholder": "eg.1",
-					"description": "Enter Maximum Node Count."
-				}
-			],
-			"output_schema":{
-				"ok": "",
-				"request_id": "",
-				"permanent_link": "",
-				"nodes": {
-					"us1.node.check-host.net": [],
-					"ch1.node.check-host.net": [],
-					"pt1.node.check-host.net": ""
-				  	}
-				},
-
-			"open": false
-		},
-		{
-			"title": "DNS Address Check",
-			"operation": "dns_address_check",
-			"description": "DNS is for retrieving A, AAAA and PTR records with TTL (time-to-live) from nameservers around the world for checking updates on DNS servers.",
-			"annotation": "dns_check",
-			"category": "investigation",
-			"parameters": [
-				{
-					"title": "Host",
-					"type": "text",
-					"name": "host",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"placeholder": "eg. https://1.1.1.1 , http://juick.com",
-					"tooltip": "Specify the host.",
-					"description": "Specify the host."
-				},
-				{
-					"title": "Max Nodes",
-					"type": "integer",
-					"name": "max_nodes",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"tooltip": "Enter Maximum Node Count.",
-					"placeholder": "eg.1",
-					"description": "Enter Maximum Node Count."
-				}
-			],
-			"output_schema":{
-				"ok": "",
-				"request_id": "",
-				"permanent_link": "",
-				"nodes": {
-					"us1.node.check-host.net": [],
-					"ch1.node.check-host.net": [],
-					"pt1.node.check-host.net": ""
-				  	}
-				},
-			"open": false
-		},
-		{
-			"title": "Check Result By Request ID",
-			"operation": "check_result_by_request_id",
-			"description": "Retrieve result of a query based on Request ID.",
-			"annotation": "check_result_by_request_id",
-			"category": "investigation",
-			"parameters": [
-				{
-					"title": "Request ID",
-					"type": "text",
-					"name": "request_id",
-					"required": true,
-					"visible": true,
-					"editable": true,
-					"value": "",
-					"tooltip": "Specify the request id.",
-					"placeholder": "eg. 180475e9kcdc",
-					"description": "Specify the request id."
-				}
-			],
-			"output_schema":{
-				"nodes": {
-					"us1.node.check-host.net": [],
-					"ch1.node.check-host.net": [],
-					"pt1.node.check-host.net": []
-				  	}
-				},
-
-			"open": false
-		}
-	]
+  "name": "check-host",
+  "version": "1.0.0",
+  "label": "Check Host",
+  "description": "Check host offers various network-related tools and services. It also provides tools for checking the availability and response time of a website or server from different locations around the world.",
+  "publisher": "spryIQ.co",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "cs_compatible": true,
+  "cs_approved": false,
+  "category": "Networking",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-check-host/blob/release/1.0.0/docs/CheckHostConnectorDoc.md",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "value": "",
+        "tooltip": "Specify the URL of the check host server to connect and perform automated operations.",
+        "description": "Specify the URL of the check host server to connect and perform automated operations.",
+        "placeholder": "e.g: https://check-host.net or check-host.net"
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Ping Check",
+      "operation": "ping_check",
+      "description": "Ping Check allows to test the reachability of a host, to measure network latency and packets loss from different servers in the world.",
+      "annotation": "ping_check",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Host",
+          "type": "text",
+          "name": "host",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "eg. https://1.1.1.1 , http://juick.com",
+          "tooltip": "Specify the host.",
+          "description": "Specify the host."
+        },
+        {
+          "title": "Max Nodes",
+          "type": "integer",
+          "name": "max_nodes",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Enter Maximum Node Count.",
+          "placeholder": "eg.1",
+          "description": "Enter Maximum Node Count."
+        }
+      ],
+      "output_schema": {
+        "us1.node.check-host.net": [
+          []
+        ],
+        "ch1.node.check-host.net": [
+          []
+        ],
+        "pt1.node.check-host.net": null
+      },
+      "open": false
+    },
+    {
+      "title": "HTTP Check",
+      "operation": "http_check",
+      "description": "HTTP is for checking website's response performance and availability from many countries and datacenters.",
+      "annotation": "http_check",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Host",
+          "type": "text",
+          "name": "host",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "eg. https://1.1.1.1 , http://juick.com",
+          "tooltip": "Specify the host.",
+          "description": "Specify the host."
+        },
+        {
+          "title": "Max Nodes",
+          "type": "integer",
+          "name": "max_nodes",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Enter Maximum Node Count.",
+          "placeholder": "eg.1",
+          "description": "Enter Maximum Node Count."
+        }
+      ],
+      "output_schema": {
+        "ok": "",
+        "request_id": "",
+        "permanent_link": "",
+        "nodes": {
+          "us1.node.check-host.net": [],
+          "ch1.node.check-host.net": [],
+          "pt1.node.check-host.net": ""
+        }
+      },
+      "open": false
+    },
+    {
+      "title": "TCP Connection Check",
+      "operation": "tcp_connection_check",
+      "description": "TCP connection checks the possibility of a TCP connection to host's specified port.",
+      "annotation": "tcp_check",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Host",
+          "type": "text",
+          "name": "host",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "eg. https://1.1.1.1 , http://juick.com",
+          "tooltip": "Specify the host.",
+          "description": "Specify the host."
+        },
+        {
+          "title": "Max Nodes",
+          "type": "integer",
+          "name": "max_nodes",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Enter Maximum Node Count.",
+          "placeholder": "eg.1",
+          "description": "Enter Maximum Node Count."
+        }
+      ],
+      "output_schema": {
+        "ok": "",
+        "request_id": "",
+        "permanent_link": "",
+        "nodes": {
+          "us1.node.check-host.net": [],
+          "ch1.node.check-host.net": [],
+          "pt1.node.check-host.net": ""
+        }
+      },
+      "open": false
+    },
+    {
+      "title": "DNS Address Check",
+      "operation": "dns_address_check",
+      "description": "DNS is for retrieving A, AAAA and PTR records with TTL (time-to-live) from nameservers around the world for checking updates on DNS servers.",
+      "annotation": "dns_check",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Host",
+          "type": "text",
+          "name": "host",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "placeholder": "eg. https://1.1.1.1 , http://juick.com",
+          "tooltip": "Specify the host.",
+          "description": "Specify the host."
+        },
+        {
+          "title": "Max Nodes",
+          "type": "integer",
+          "name": "max_nodes",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Enter Maximum Node Count.",
+          "placeholder": "eg.1",
+          "description": "Enter Maximum Node Count."
+        }
+      ],
+      "output_schema": {
+        "ok": "",
+        "request_id": "",
+        "permanent_link": "",
+        "nodes": {
+          "us1.node.check-host.net": [],
+          "ch1.node.check-host.net": [],
+          "pt1.node.check-host.net": ""
+        }
+      },
+      "open": false
+    },
+    {
+      "title": "Check Result By Request ID",
+      "operation": "check_result_by_request_id",
+      "description": "Retrieve result of a query based on Request ID.",
+      "annotation": "check_result_by_request_id",
+      "category": "investigation",
+      "parameters": [
+        {
+          "title": "Request ID",
+          "type": "text",
+          "name": "request_id",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Specify the request id.",
+          "placeholder": "eg. 180475e9kcdc",
+          "description": "Specify the request id."
+        }
+      ],
+      "output_schema": {
+        "nodes": {
+          "us1.node.check-host.net": [],
+          "ch1.node.check-host.net": [],
+          "pt1.node.check-host.net": []
+        }
+      },
+      "open": false
+    }
+  ]
 }
