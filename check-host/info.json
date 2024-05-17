@@ -9,7 +9,7 @@
 	"cs_compatible": true,
 	"cs_approved": false,
 	"category": "Networking",
-	"help_online": "https://github.com/jitesh-spryiq/connector-focsec/blob/develop/docs/CheckHostConnectorDoc.md",
+	"help_online": "https://github.com/fortinet-fortisoar/connector-check-host/blob/release/1.0.0/docs/CheckHostConnectorDoc.md",
 	"configuration": {
 		"fields": [
 			{
