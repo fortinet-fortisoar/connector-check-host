@@ -20,7 +20,7 @@ class CheckHost(object):
 
     def make_api_call(self, endpoint=None, method='GET', headers=None, health_check=False):
         url = self.server_url + endpoint
-        logger.error('RESP API Endpoint: {0}'.format(url))
+        logger.debug('RESP API Endpoint: {0}'.format(url))
         if headers:
             self.headers.update(headers)
         try:
